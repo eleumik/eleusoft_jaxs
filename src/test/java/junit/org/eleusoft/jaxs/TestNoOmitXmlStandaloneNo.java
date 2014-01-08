@@ -1,0 +1,30 @@
+package junit.org.eleusoft.jaxs;
+
+import java.io.IOException;
+import java.io.StringWriter;
+
+import javax.xml.parsers.ParserConfigurationException;
+
+
+import org.eleusoft.jaxs.SAXSerializer;
+import org.eleusoft.jaxs.SAXSerializerFactory;
+import org.eleusoft.xml.jaxp.JAXP;
+import org.xml.sax.SAXException;
+
+public class TestNoOmitXmlStandaloneNo extends MultiSaxCheckXmlTestCase
+{
+
+    protected void doTestSaxSerializer(SAXSerializerFactory f) throws IOException, SAXException, ParserConfigurationException
+    {
+        checkSerialize(f, "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?><xml/>", 
+            "<?xml version=\"1.0\" encoding=\"UTF-8\"?><xml/>", "<xml/>");
+    }
+
+    protected void configure(SAXSerializer s)
+    {
+        super.configure(s);
+        s.setOmitXMLDeclaration(false);
+        s.setStandalone(false);
+    }
+    
+}

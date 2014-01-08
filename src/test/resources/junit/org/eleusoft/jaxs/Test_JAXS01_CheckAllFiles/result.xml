@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite name="junit.org.eleusoft.xmlparsers.whitespace.WhitespaceTestSuite" tests="5" failures="0" errors="0" time="0.156">
+  <properties>
+    <property name="java.vendor" value="Sun Microsystems Inc."></property>
+    <property name="schema.src" value="./../../"></property>
+    <property name="os.name" value="Windows XP"></property>
+    <property name="sun.boot.class.path" value="E:\Sun\AppServer\jdk\jre\lib\rt.jar;E:\Sun\AppServer\jdk\jre\lib\i18n.jar;E:\Sun\AppServer\jdk\jre\lib\sunrsasign.jar;E:\Sun\AppServer\jdk\jre\lib\jsse.jar;E:\Sun\AppServer\jdk\jre\lib\jce.jar;E:\Sun\AppServer\jdk\jre\lib\charsets.jar;E:\Sun\AppServer\jdk\jre\classes"></property>
+    <property name="junit.ineo.src" value="./../../"></property>
+    <property name="TODAY" value="March 5 2006"></property>
+    <property name="sun.java2d.fontpath" value=""></property>
+    <property name="java.vm.specification.vendor" value="Sun Microsystems Inc."></property>
+    <property name="ant.home" value="F:\packages\apache-ant-1.6.0\bin\.."></property>
+    <property name="java.runtime.version" value="1.4.2_07-b05"></property>
+    <property name="jarfile.classes" value="ineo.jar"></property>
+    <property name="user.name" value="mik"></property>
+    <property name="distbin" value="ele_ineo"></property>
+    <property name="user.language" value="en"></property>
+    <property name="sun.boot.library.path" value="E:\Sun\AppServer\jdk\jre\bin"></property>
+    <property name="jar.org.eleusoft.ineo" value="F:\www\fd\WEB-INF\classes\BUILD\org.eleusoft.ineo\ele_ineo\ineo.jar"></property>
+    <property name="ant.project.name" value="Eleusoft InEo Junit Report Package"></property>
+    <property name="DSTAMP" value="20060305"></property>
+    <property name="java.version" value="1.4.2_07"></property>
+    <property name="version" value="1.0"></property>
+    <property name="user.timezone" value=""></property>
+    <property name="javadoc.title" value="Eleusoft InEo JUnit Report"></property>
+    <property name="distsrc" value="ele_ineo_1.0_src"></property>
+    <property name="sun.arch.data.model" value="32"></property>
+    <property name="classpath" value=""></property>
+    <property name="java.endorsed.dirs" value="E:\Sun\AppServer\jdk\jre\lib\endorsed"></property>
+    <property name="sun.cpu.isalist" value="pentium i486 i386"></property>
+    <property name="file.encoding.pkg" value="sun.io"></property>
+    <property name="file.separator" value="\"></property>
+    <property name="java.specification.name" value="Java Platform API Specification"></property>
+    <property name="javadoc.packages" value="org/eleusoft/ineo/report"></property>
+    <property name="java.class.version" value="48.0"></property>
+    <property name="user.country" value="GB"></property>
+    <property name="java.home" value="E:\Sun\AppServer\jdk\jre"></property>
+    <property name="java.vm.info" value="mixed mode"></property>
+    <property name="ant.file" value="F:\www\fd\WEB-INF\junit\build.xml"></property>
+    <property name="os.version" value="5.1"></property>
+    <property name="junit.packagelist" value="http://www.junit.org/junit/javadoc/3.7/package-list"></property>
+    <property name="ant.file.Eleusoft InEo Junit Report Package" value="F:\www\fd\WEB-INF\junit\build.xml"></property>
+    <property name="path.separator" value=";"></property>
+    <property name="jar.org.eleusoft.collections" value="../org.eleusoft.collections/collections_1.0/eleusoft_coll.jar"></property>
+    <property name="java.vm.version" value="1.4.2_07-b05"></property>
+    <property name="java.util.prefs.PreferencesFactory" value="java.util.prefs.WindowsPreferencesFactory"></property>
+    <property name="user.variant" value=""></property>
+    <property name="work.classes" value="H:\temp\mik\/buildtemp_200603050444/classes"></property>
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"></property>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"></property>
+    <property name="jdk.packagelist" value="http://java.sun.com/j2ee/1.3/docs/api"></property>
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit"></property>
+    <property name="packages" value="org/eleusoft/ineo/report/*"></property>
+    <property name="work.lib" value="H:\temp\mik\/buildtemp_200603050444/lib"></property>
+    <property name="user.home" value="G:"></property>
+    <property name="java.specification.vendor" value="Sun Microsystems Inc."></property>
+    <property name="java.library.path" value="E:\Sun\AppServer\jdk\jre\bin;.;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;F:\packages\apache-ant-1.6.0\bin;c:\;e:\Sun\AppServer\bin;E:\Sun\AppServer\jdk\bin;"></property>
+    <property name="name" value="ineo"></property>
+    <property name="java.vendor.url" value="http://java.sun.com/"></property>
+    <property name="workdir" value="H:\temp\mik\/buildtemp_200603050444"></property>
+    <property name="java.vm.vendor" value="Sun Microsystems Inc."></property>
+    <property name="java.runtime.name" value="Java(TM) 2 Runtime Environment, Standard Edition"></property>
+    <property name="java.class.path" value="F:\www\fd\WEB-INF\classes\BUILD\org.eleusoft.ineo\ele_ineo\ineo.jar;F:\www\fd\WEB-INF\junit;E:\Sun\AppServer\jdk\lib\tools.jar;F:\packages\apache-ant-1.6.0\lib\junit.jar;F:\packages\apache-ant-1.6.0\lib\ant-launcher.jar;F:\packages\apache-ant-1.6.0\lib\ant.jar;F:\packages\apache-ant-1.6.0\lib\ant-junit.jar"></property>
+    <property name="ant.version" value="Apache Ant version 1.6.0 compiled on December 18 2003"></property>
+    <property name="TSTAMP" value="0444"></property>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"></property>
+    <property name="java.vm.specification.version" value="1.0"></property>
+    <property name="sun.cpu.endian" value="little"></property>
+    <property name="sun.os.patch.level" value="Service Pack 2"></property>
+    <property name="jar.org.relaxng.datatype" value="../../../lib/relaxngDatatype.jar"></property>
+    <property name="java.io.tmpdir" value="H:\temp\mik\"></property>
+    <property name="java.vendor.url.bug" value="http://java.sun.com/cgi-bin/bugreport.cgi"></property>
+    <property name="jar.junit" value="F:\JUnit\junit3.8.1\junit.jar"></property>
+    <property name="htmlprint.src" value="./../../"></property>
+    <property name="data.src" value="./../../"></property>
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"></property>
+    <property name="os.arch" value="x86"></property>
+    <property name="jar.whitespacesuite" value="."></property>
+    <property name="java.ext.dirs" value="E:\Sun\AppServer\jdk\jre\lib\ext"></property>
+    <property name="user.dir" value="F:\www\fd\WEB-INF\junit"></property>
+    <property name="project" value="Eleusoft InEo Junit Report Package"></property>
+    <property name="line.separator" value="
+"></property>
+    <property name="java.vm.name" value="Java HotSpot(TM) Client VM"></property>
+    <property name="jar.org.eleusoft.xml" value="../org.eleusoft.xml/xml_1.0/eleusoft_xml.jar"></property>
+    <property name="jar.com.sun.msv.xs" value="../../../lib/xs.jar"></property>
+    <property name="basedir" value="F:\www\fd\WEB-INF\junit"></property>
+    <property name="ant.java.version" value="1.4"></property>
+    <property name="file.encoding" value="Cp1252"></property>
+    <property name="htmlkit.src" value="./../../"></property>
+    <property name="_hasIneoJar" value="true"></property>
+    <property name="java.specification.version" value="1.4"></property>
+  </properties>
+  <testcase name="testRunConfigurations" classname="junit.org.eleusoft.xmlparsers.whitespace.Test_WTS01_BasicSpaces" time="0.031"></testcase>
+  <testcase name="testRunConfigurations" classname="junit.org.eleusoft.xmlparsers.whitespace.Test_WTS02_BasicSpaces_CDATA" time="0.016"></testcase>
+  <testcase name="testRunConfigurations" classname="junit.org.eleusoft.xmlparsers.whitespace.Test_WTS05_BasicSpaces_Attribute" time="0.015"></testcase>
+  <testcase name="testRunConfigurations" classname="junit.org.eleusoft.xmlparsers.whitespace.Test_WTS03_BasicEndOfLine" time="0.032"></testcase>
+  <testcase name="testRunConfigurations" classname="junit.org.eleusoft.xmlparsers.whitespace.Test_WTS04_BasicEndOfLine_CDATA" time="0.015"></testcase>
+  <system-out><![CDATA[XML:<xml></xml>
+XML:<xml> </xml>
+XML:<xml>  </xml>
+XML:<xml> A</xml>
+XML:<xml>A </xml>
+XML:<xml> A </xml>
+XML:<xml>  A  </xml>
+XML:<xml> A A </xml>
+XML:<xml> A  A </xml>
+XML:<xml>	</xml>
+XML:<xml>		</xml>
+XML:<xml><![CDATA[&#x5d;&#x5d;&gt;</xml>
+XML:<xml><![CDATA[ &#x5d;&#x5d;&gt;</xml>
+XML:<xml><![CDATA[  &#x5d;&#x5d;&gt;</xml>
+XML:<xml><![CDATA[ A&#x5d;&#x5d;&gt;</xml>
+XML:<xml><![CDATA[A &#x5d;&#x5d;&gt;</xml>
+XML:<xml><![CDATA[ A &#x5d;&#x5d;&gt;</xml>
+XML:<xml><![CDATA[  A  &#x5d;&#x5d;&gt;</xml>
+XML:<xml><![CDATA[ A A &#x5d;&#x5d;&gt;</xml>
+XML:<xml><![CDATA[ A  A &#x5d;&#x5d;&gt;</xml>
+XML:<xml><![CDATA[	&#x5d;&#x5d;&gt;</xml>
+XML:<xml><![CDATA[		&#x5d;&#x5d;&gt;</xml>
+XML:<xml attr=''/>
+XML:<xml attr=' '/>
+XML:<xml attr='  '/>
+XML:<xml attr=' A'/>
+XML:<xml attr='A '/>
+XML:<xml attr=' A '/>
+XML:<xml attr='  A  '/>
+XML:<xml attr=' A A '/>
+XML:<xml attr=' A  A '/>
+XML:<xml attr='	'/>
+XML:<xml attr='		'/>
+XML:<xml>
+</xml>
+XML:<xml>
+
+</xml>
+XML:<xml></xml>
+XML:<xml>
+</xml>
+XML:<xml>
+</xml>
+XML:<xml></xml>
+XML:<xml>
+
+</xml>
+XML:<xml>
+8
+</xml>
+XML:<xml>
+ 8 
+</xml>
+XML:<xml>8</xml>
+XML:<xml> 8 </xml>
+XML:<xml>8
+8</xml>
+XML:<xml>8 
+ 8</xml>
+XML:<xml>88</xml>
+XML:<xml>8  8</xml>
+XML:<xml><![CDATA[
+&#x5d;&#x5d;&gt;</xml>
+XML:<xml><![CDATA[
+
+&#x5d;&#x5d;&gt;</xml>
+XML:<xml><![CDATA[&#x5d;&#x5d;&gt;</xml>
+XML:<xml><![CDATA[
+&#x5d;&#x5d;&gt;</xml>
+XML:<xml><![CDATA[
+&#x5d;&#x5d;&gt;</xml>
+XML:<xml><![CDATA[&#x5d;&#x5d;&gt;</xml>
+XML:<xml><![CDATA[
+
+&#x5d;&#x5d;&gt;</xml>
+XML:<xml><![CDATA[
+8
+&#x5d;&#x5d;&gt;</xml>
+XML:<xml><![CDATA[
+ 8 
+&#x5d;&#x5d;&gt;</xml>
+XML:<xml><![CDATA[8&#x5d;&#x5d;&gt;</xml>
+XML:<xml><![CDATA[ 8 &#x5d;&#x5d;&gt;</xml>
+XML:<xml><![CDATA[8
+8&#x5d;&#x5d;&gt;</xml>
+XML:<xml><![CDATA[8 
+ 8&#x5d;&#x5d;&gt;</xml>
+XML:<xml><![CDATA[88&#x5d;&#x5d;&gt;</xml>
+XML:<xml><![CDATA[8  8&#x5d;&#x5d;&gt;</xml>
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
