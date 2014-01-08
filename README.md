@@ -26,7 +26,7 @@ The following implementations are available for "Xml Serialization" of DOM docum
 Dependencies
 ------------
 
-The API depends only on SAX and DOM, while the full list of dependencies can be found in the [`pom.xml`](https://github.com/eleumik/eleusoft_jaxs/blob/master/pom.xml)
+The API package depends only on SAX and DOM packages included in JRE. The full list of dependencies can be found in the [`pom.xml`](https://github.com/eleumik/eleusoft_jaxs/blob/master/pom.xml)
 
 
 Author
