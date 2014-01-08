@@ -23,6 +23,11 @@ The following implementations are available for "Xml Serialization" of DOM docum
 - Resin
 - DOM 3 (TODO)
 
+Dependencies
+------------
+
+The API depends only on SAX and DOM, while the full list of dependencies can be found in the [`pom.xml`](https://github.com/eleumik/eleusoft_jaxs/blob/master/pom.xml)
+
 
 Author
 ------
