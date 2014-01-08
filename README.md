@@ -3,8 +3,8 @@ eleusoft_jaxs
 
 Java Xml Serialization package 
 
-Motivation
-----------
+Details
+-------
 
 Xml Serialization or to be more precise, the serialization to XML of Object Models representing an XML Document at runtime can be achieved in different ways with different libraries and sometimes with different results especially for what regards whitespaces including end of line.
 
