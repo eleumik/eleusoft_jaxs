@@ -2,7 +2,6 @@ package org.eleusoft.jaxs;
 
 import java.io.IOException;
 
-import org.xml.sax.SAXException;
 import org.xml.sax.ContentHandler;
 
 

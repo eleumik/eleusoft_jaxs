@@ -1,15 +1,6 @@
 package org.eleusoft.jaxs.xalan;
 
-import java.io.OutputStream;
-import java.io.OutputStreamWriter;
-import java.io.Writer;
-import java.io.StringWriter;
-import java.io.IOException;
-
-
 import java.util.Properties;
-
-import org.eleusoft.jaxs.helpers.AbstractSAXSerializer;
 
 class XalanSerializerUtil
 {

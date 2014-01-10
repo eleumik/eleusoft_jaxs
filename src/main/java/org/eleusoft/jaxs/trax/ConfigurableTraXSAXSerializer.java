@@ -4,9 +4,6 @@ import javax.xml.transform.TransformerConfigurationException;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.sax.SAXTransformerFactory;
 import javax.xml.transform.sax.TransformerHandler;
-import javax.xml.transform.stream.StreamResult;
-
-import org.xml.sax.ContentHandler;
 
 /**
  * A TraX SAX Serializer that must be configured with a {@link TransformerFactory},

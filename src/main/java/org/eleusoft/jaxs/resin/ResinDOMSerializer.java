@@ -1,20 +1,12 @@
 package org.eleusoft.jaxs.resin;
 
 import java.io.IOException;
-import java.io.Writer;
 import java.io.OutputStream;
-import java.io.OutputStreamWriter;
-
-
-import org.w3c.dom.Node;
-import org.w3c.dom.Text;
-import org.w3c.dom.Document;
-import org.w3c.dom.DocumentFragment;
-import org.w3c.dom.Element;
-
-//import com.caucho.xml.XmlPrinter;
+import java.io.Writer;
 
 import org.eleusoft.jaxs.helpers.AbstractDOMSerializer;
+import org.w3c.dom.Node;
+//import com.caucho.xml.XmlPrinter;
 
 
 

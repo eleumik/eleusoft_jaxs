@@ -1,25 +1,6 @@
 package org.eleusoft.jaxs.trax;
 
-import java.io.IOException;
-import java.io.OutputStreamWriter;
-import java.io.Writer;
-import java.io.OutputStream;
-
-
-import org.xml.sax.ContentHandler;
-
-
-import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
-import javax.xml.transform.TransformerConfigurationException;
-import javax.xml.transform.OutputKeys;
-
-import javax.xml.transform.stream.StreamResult;
-import javax.xml.transform.dom.DOMSource; 
-
-import javax.xml.transform.sax.SAXTransformerFactory;
-import javax.xml.transform.sax.TransformerHandler;
 
 
 

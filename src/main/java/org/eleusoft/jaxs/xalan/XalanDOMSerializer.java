@@ -1,22 +1,18 @@
 package org.eleusoft.jaxs.xalan;
 
 import java.io.IOException;
-import java.io.Writer;
 import java.io.OutputStream;
-import java.io.OutputStreamWriter;
+import java.io.Writer;
+import java.util.Properties;
 
-
-import org.w3c.dom.Node;
-import org.w3c.dom.Text;
+import org.apache.xml.serializer.OutputPropertiesFactory;
+import org.apache.xml.serializer.Serializer;
+import org.apache.xml.serializer.SerializerFactory;
+import org.eleusoft.jaxs.helpers.AbstractDOMSerializer;
 import org.w3c.dom.Document;
 import org.w3c.dom.DocumentFragment;
 import org.w3c.dom.Element;
-import org.apache.xml.serializer.* ;
-import org.apache.xml.serializer.SerializerFactory ;
-
-import java.util.Properties;
-import org.eleusoft.jaxs.DOMSerializer;
-import org.eleusoft.jaxs.helpers.AbstractDOMSerializer;
+import org.w3c.dom.Node;
 
 
 

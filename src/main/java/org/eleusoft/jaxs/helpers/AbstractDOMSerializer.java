@@ -1,17 +1,13 @@
 package org.eleusoft.jaxs.helpers;
 
-import java.io.OutputStreamWriter;
-import java.io.OutputStream;
-import java.io.Writer;
-import java.io.StringWriter;
 import java.io.IOException;
-
-
-import org.w3c.dom.Node;
-import org.w3c.dom.Text;
-
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.io.Writer;
 
 import org.eleusoft.jaxs.DOMSerializer;
+import org.w3c.dom.Node;
+import org.w3c.dom.Text;
 
 /** 
  * Helper base class for DOMSerializer

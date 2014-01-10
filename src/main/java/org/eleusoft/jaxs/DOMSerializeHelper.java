@@ -1,10 +1,10 @@
 package org.eleusoft.jaxs;
 
-import java.io.OutputStream;
-import java.io.Writer;
 import java.io.BufferedWriter;
-import java.io.StringWriter;
 import java.io.IOException;
+import java.io.OutputStream;
+import java.io.StringWriter;
+import java.io.Writer;
 
 import org.w3c.dom.Node;
 
@@ -18,6 +18,10 @@ import org.w3c.dom.Node;
  **/
 public final class DOMSerializeHelper
 {
+    private DOMSerializeHelper()
+    {
+        // no inst
+    }
 	
 	private static DOMSerializer getImpl()
 	{

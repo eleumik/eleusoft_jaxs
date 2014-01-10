@@ -1,10 +1,7 @@
 package org.eleusoft.jaxs.saxon;
 
 
-import javax.xml.transform.TransformerConfigurationException;
-
 import org.eleusoft.jaxs.DOMSerializer;
-import org.eleusoft.jaxs.DOMSerializerFactory;
 import org.eleusoft.jaxs.SAXSerializer;
 import org.eleusoft.jaxs.SAXSerializerFactory;
 

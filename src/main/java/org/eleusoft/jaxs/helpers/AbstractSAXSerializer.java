@@ -1,7 +1,7 @@
 package org.eleusoft.jaxs.helpers;
 
 
-import org.eleusoft.jaxs.*;
+import org.eleusoft.jaxs.SAXSerializer;
 
 /** 
  * Abstract base class for SAX serializers. nice..

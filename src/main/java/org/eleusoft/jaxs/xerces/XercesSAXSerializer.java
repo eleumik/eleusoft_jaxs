@@ -1,17 +1,14 @@
 package org.eleusoft.jaxs.xerces;
 
+import java.io.IOException;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
-import java.io.StringWriter;
-import java.io.IOException;
-
-import org.xml.sax.ContentHandler;
 
 import org.apache.xml.serialize.OutputFormat;
 import org.apache.xml.serialize.XMLSerializer;
-
 import org.eleusoft.jaxs.helpers.AbstractSAXSerializer;
+import org.xml.sax.ContentHandler;
 /** 
  * Serializer for SAX events streams based on apache
  * <code>org.apache.xml.serialize.XMLSerializer</code> class.

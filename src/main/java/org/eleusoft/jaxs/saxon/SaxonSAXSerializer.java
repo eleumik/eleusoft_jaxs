@@ -1,14 +1,12 @@
 package org.eleusoft.jaxs.saxon;
 
 
-import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerConfigurationException;
 import javax.xml.transform.sax.TransformerHandler;
 
 import net.sf.saxon.Configuration;
 
 import org.eleusoft.jaxs.trax.AbstractTrAXSAXSerializer;
-import org.eleusoft.jaxs.trax.ConfigurableTraXSAXSerializer;
 
 /** 
  * Serializer for SAX events based on SAXON.

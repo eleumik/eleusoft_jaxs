@@ -1,20 +1,16 @@
 package org.eleusoft.jaxs.xerces;
 
 import java.io.IOException;
-import java.io.Writer;
 import java.io.OutputStream;
-import java.io.OutputStreamWriter;
+import java.io.Writer;
 
-
-import org.w3c.dom.Node;
-import org.w3c.dom.Text;
+import org.apache.xml.serialize.OutputFormat;
+import org.apache.xml.serialize.Serializer;
+import org.eleusoft.jaxs.helpers.AbstractDOMSerializer;
 import org.w3c.dom.Document;
 import org.w3c.dom.DocumentFragment;
 import org.w3c.dom.Element;
-import org.apache.xml.serialize.* ;
-
-import org.eleusoft.jaxs.DOMSerializer;
-import org.eleusoft.jaxs.helpers.AbstractDOMSerializer;
+import org.w3c.dom.Node;
 
 
 

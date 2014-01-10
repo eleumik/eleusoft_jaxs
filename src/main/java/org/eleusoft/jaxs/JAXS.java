@@ -1,87 +1,64 @@
 package org.eleusoft.jaxs;
 
-import java.util.Properties;
+
 /** 
  * Entry point for xml serialization.
  * 
- * <p>This class is configured with a property 
- * file in META-INF/services,
- * that may contain the following properties:
- * <dl class=dl>
- * <dt>org.eleusoft.jaxs.SAXSerializerFactory</dt>
- * <dd>Name of the {@link org.eleusoft.jaxs.SAXSerializerFactory} implementation</dd>
- * <dt>org.eleusoft.jaxs.DOMSerializerFactory</dt>
- * <dd>Name of the {@link org.eleusoft.jaxs.DOMSerializerFactory} implementation</dd>
- * <dt>debug</dt>
- * <dd>If "<code>true</code>" the implementation names are printed
- * at loading time to the system out.</dd>
+ * <p>Default implementations for SAX and DOM are 
+ * {@link org.eleusoft.jaxs.trax.TrAXSerializerFactory}
+ * 
+ * <p>This class is optionally configured with two 
+ * files in <code>META-INF/services</code> in the classpath:
+ * <ol>
+ * <li><code>META-INF/services/org.eleusoft.jaxs.DOMSerializer</code>
+ * <li><code>META-INF/services/org.eleusoft.jaxs.SAXSerializer</code>
+ * </ol>
+ * that may contain a list of implementations for each line.
 
  * </dl>
  * <p>Example configuration:
+ * <p>File <code>META-INF/services/org.eleusoft.jaxs.DOMSerializer</code>
  * <pre class='code'>
- * <em>#org.eleusoft.jaxs.DOMSerializerFactory=org.eleusoft.jaxs.xerces.XercesSerializerFactory
- * #org.eleusoft.jaxs.SAXSerializerFactory=org.eleusoft.jaxs.trax.TrAXSerializerFactory
- * #org.eleusoft.jaxs.DOMSerializerFactory=org.eleusoft.jaxs.xerces.XercesSerializerFactory
- * #org.eleusoft.jaxs.SAXSerializerFactory=org.eleusoft.jaxs.xerces.XercesSerializerFactory
- * #org.eleusoft.jaxs.SAXSerializerFactory=org.eleusoft.jaxs.saxon.SaxonSerializerFactory</em>
- * org.eleusoft.jaxs.SAXSerializerFactory=org.eleusoft.jaxs.xalan.XalanSerializerFactory
- * debug=true
+ * org.eleusoft.jaxs.xerces.XercesSerializerFactory
+ * org.eleusoft.jaxs.trax.TrAXSerializerFactory
+ * </pre>
+ * <p>File <code>META-INF/services/org.eleusoft.jaxs.SAXSerializer</code>
+ * <pre class='code'>
+ * org.eleusoft.jaxs.xalan.XalanSerializerFactory
+ * org.eleusoft.jaxs.xerces.XercesSerializerFactory
+ * org.eleusoft.jaxs.saxon.SaxonSerializerFactory</em>
  * </pre>
  **/
 public class JAXS
 {
     private static final boolean debug = Boolean.getBoolean(JAXS.class.getName() + ".debug");
 
-    private static String DEFAULT_DOMSERIALIZERFACTORY_CLASSNAME = 
-        "org.eleusoft.jaxs.trax.TrAXSerializerFactory";
-    private static String DEFAULT_SAXSERIALIZERFACTORY_CLASSNAME = 
-         "org.eleusoft.jaxs.trax.TrAXSerializerFactory";
-        
+    
     private static DOMSerializerFactory domSerializerFactory;
     private static SAXSerializerFactory saxSerializerFactory;
     private static RuntimeException e;
-    static 
+    
+    static
     {
-        try
-        {
-            final Properties props = new Properties();
-                props.setProperty(DOMSerializerFactory.class.getName(),
-                    DEFAULT_DOMSERIALIZERFACTORY_CLASSNAME);
-                props.setProperty(SAXSerializerFactory.class.getName(),
-                    DEFAULT_SAXSERIALIZERFACTORY_CLASSNAME);
-            PropertiesLoader.loadProperties(JAXS.class, props, debug);
+        String DEFAULT_DOMSERIALIZERFACTORY_CLASSNAME = 
+            "org.eleusoft.jaxs.trax.TrAXSerializerFactory";
+        String DEFAULT_SAXSERIALIZERFACTORY_CLASSNAME = 
+             "org.eleusoft.jaxs.trax.TrAXSerializerFactory";
         
-            final PropertiesLoader.ProviderLoader loader = 
-                new PropertiesLoader.ProviderLoader(JAXS.class, false, debug);
-        
-            String domFactory = System.getProperty(DOMSerializerFactory.class.getName());
-            //System.out.println("dom factory:" + domFactory);
-            if (domFactory==null) domFactory = props.getProperty(DOMSerializerFactory.class.getName());
-            if (domFactory==null) 
-                throw new RuntimeException("No configuration for [" +
-                    DOMSerializerFactory.class.getName() + "]");
-            domSerializerFactory = (DOMSerializerFactory)loader.load(domFactory);
-            if (domSerializerFactory==null) throw new RuntimeException("Could not load class:" + domFactory);
-        
-            String saxFactory = System.getProperty(SAXSerializerFactory.class.getName());
-            if (saxFactory==null) saxFactory = props.getProperty(SAXSerializerFactory.class.getName());
-            if (saxFactory==null) 
-                throw new RuntimeException("No configuration for [" +
-                    SAXSerializerFactory.class.getName() + "]");
-            saxSerializerFactory = (SAXSerializerFactory)loader.load(saxFactory);
-            if (saxSerializerFactory==null) throw new RuntimeException("Could not load class:" + saxFactory);
-        
-            if (debug || "true".equals(props.getProperty("debug"))) showInfo();
-        }
-        catch(RuntimeException re)
-        {
-            re.printStackTrace();
-            e = re;
-        }
-            
+        ServiceLoader sl = new ServiceLoader();
+        domSerializerFactory = (DOMSerializerFactory) sl.getService(DOMSerializerFactory.class, new String[]{
+            DEFAULT_DOMSERIALIZERFACTORY_CLASSNAME
+        });
+        saxSerializerFactory = (SAXSerializerFactory) sl.getService(SAXSerializerFactory.class, new String[]{
+            DEFAULT_SAXSERIALIZERFACTORY_CLASSNAME
+        });
         
     }
-	private JAXS(){}
+    
+    
+    
+
+    private JAXS(){}
     /**
      * Retrieves a new DOMSerializer.
      * The DOMSerializer is not thread safe.

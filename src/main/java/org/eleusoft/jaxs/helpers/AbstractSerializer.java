@@ -3,12 +3,6 @@ package org.eleusoft.jaxs.helpers;
 import java.io.OutputStream;
 import java.io.Writer;
 
-import java.util.ResourceBundle;
-import java.util.PropertyResourceBundle;
-
-import org.w3c.dom.Node;
-
-
 import org.eleusoft.jaxs.XMLSerializer;
 /** 
  * Abstract base class for XML serializers.

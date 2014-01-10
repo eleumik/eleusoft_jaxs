@@ -3,8 +3,6 @@ package org.eleusoft.jaxs.resin;
 
 import org.eleusoft.jaxs.DOMSerializer;
 import org.eleusoft.jaxs.DOMSerializerFactory;
-import org.eleusoft.jaxs.SAXSerializer;
-import org.eleusoft.jaxs.SAXSerializerFactory;
 
 /** 
  * Factory of DOMSerializer based on Resin.
