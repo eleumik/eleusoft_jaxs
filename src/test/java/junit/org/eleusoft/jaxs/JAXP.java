@@ -16,7 +16,6 @@ import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 
-import org.eleusoft.xml.coll.ArrayStack;
 import org.w3c.dom.Document;
 import org.xml.sax.ContentHandler;
 import org.xml.sax.EntityResolver;
@@ -134,8 +133,6 @@ public class JAXP
 	 */
  	public static final EntityResolver NULL_ENTITY_RESOLVER = NULL_DEFAULT_HANDLER;
 
-	private final static ArrayStack buildersCache = new ArrayStack();
-	private final static ArrayStack parsersCache = new ArrayStack();
 
 	private static int SIZE_CACHE_BUILDERS = 10;
 	private static int SIZE_CACHE_PARSERS = 10;
@@ -151,47 +148,7 @@ public class JAXP
 	
 	private static final boolean debug = Boolean.getBoolean(JAXP.class.getName() + ".debug");
 
-	static {
 	
-	    if (debug)
-	    {
-	        info("****************");
-	        info("* Eleusoft JAXP");
-	        info("****************");
-            
-	    }
-	    info("* org.eleusoft.xml.jaxp.JAXP - loading config.");
-        try
-		{
-			ClassMetaInfLoader props = new ClassMetaInfLoader(JAXP.class);
-			DOM_VALIDATE = props.getBool("dom.validate", DOM_VALIDATE);
-			SAX_VALIDATE = props.getBool("sax.validate", SAX_VALIDATE);
-			DOM_NAMESPACES = props.getBool("dom.namespaces", DOM_NAMESPACES);
-			SAX_NAMESPACES = props.getBool("sax.namespaces", SAX_NAMESPACES);
-			DOM_COALESCING = props.getBool("dom.coalescing", DOM_COALESCING);
-			DOM_EXPANDENTITYREFERENCES = props.getBool("dom.expandentityreferences", DOM_EXPANDENTITYREFERENCES);
-			CACHE_DEBUG = debug ||  props.getBool("cache.debug", false);
-			if (CACHE_DEBUG) info("Eleusoft JAXP Cache Debug ON");
-			SIZE_CACHE_BUILDERS = props.getInt("dom.cache.size", DEF_CACHE_SIZE);
-			SIZE_CACHE_PARSERS = props.getInt("sax.cache.size", DEF_CACHE_SIZE);
-			if (SIZE_CACHE_BUILDERS<=0) SIZE_CACHE_BUILDERS = DEF_CACHE_SIZE;
-			if (SIZE_CACHE_PARSERS<=0) SIZE_CACHE_PARSERS = DEF_CACHE_SIZE;
-
-			info("* org.eleusoft.xml.jaxp.JAXP - Config loaded.");
-            info("* org.eleusoft.xml.jaxp.JAXP - Cache:" + SIZE_CACHE_BUILDERS + " builders and " +  SIZE_CACHE_PARSERS + " parsers");
-		}
-		catch(java.util.MissingResourceException ex)
-		{
-			error("JAXP::loadConfiguration() - no properties found.", ex);
-			
-		}
-    	catch(Exception ex)
-		{
-			error("JAXP::loadConfiguration() - failed to load properties file", ex);
-			
-		}
-
-	}
 	private static void error(String string, Exception ex)
     {
 	    System.err.println("eleusoft.JAXP - ERROR - " + string);
@@ -589,72 +546,26 @@ public class JAXP
  	}
  	private static void releaseBuilder(final DocumentBuilder builder)
 	{
-		synchronized(buildersCache)
-		{
-			final int size = buildersCache.size();
-			if (size < SIZE_CACHE_BUILDERS)
-			{
-				buildersCache.push(builder);
-				//System.out.println("Builder pushed, now:" + buildersCache.size());
-
-			}
-		}
+		
 	}
 
 	private static DocumentBuilder aquireBuilder()
 	    throws ParserConfigurationException //IOException, org.xml.sax.SAXException
 	{
 		DocumentBuilder builder = null;
-		synchronized(buildersCache)
-		{
-			if (!buildersCache.empty())
-			{
-				builder =  (DocumentBuilder)buildersCache.pop();
-				if (CACHE_DEBUG) info("Builder acquired from cache, now in cache:" + buildersCache.size());
-			}
-		    if(builder==null)
-		    {
-		    	builder = newBuilder();
-		    	if(CACHE_DEBUG)info("EJAXP - Builder created because now cache size:" + buildersCache.size());
-		    }
-		}
+		builder = newBuilder();
 		return builder;
 
 	}
 
 	static void releaseParser(final SAXParser parser)
 	{
-	    synchronized(parsersCache)
-		{
-			final int size = parsersCache.size();
-			if (size < SIZE_CACHE_PARSERS)
-			{
-				parsersCache.push(parser);
-				if (CACHE_DEBUG) info("Parser released in cache, now in cache:" + parsersCache.size());
-			}
-			else if (CACHE_DEBUG) info("Parser not release in cache, that is over size, now :" + parsersCache.size());
-		}
+	    
 	}
 
 	static SAXParser aquireParser() throws ParserConfigurationException, SAXException
 	{
-		SAXParser parser = null;
-		synchronized(parsersCache)
-		{
-			if (!parsersCache.empty())
-			{
-				parser =  (SAXParser)parsersCache.pop();
-				if (CACHE_DEBUG) info("Parser acquired from cache, now in cache:" + parsersCache.size());
-			}
-            
-		}
-		if(parser==null)
-		{
-			parser = newSAXParser();
-	         if(CACHE_DEBUG)info("EJAXP - SAX Parser created because now cache size:" + buildersCache.size());
-	         
-		}
-		return parser;
+		return newSAXParser();
 
 	}
 
