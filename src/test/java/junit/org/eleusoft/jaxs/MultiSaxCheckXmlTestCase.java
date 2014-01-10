@@ -7,7 +7,6 @@ import javax.xml.parsers.ParserConfigurationException;
 
 import org.eleusoft.jaxs.SAXSerializer;
 import org.eleusoft.jaxs.SAXSerializerFactory;
-import org.eleusoft.xml.jaxp.JAXP;
 import org.xml.sax.SAXException;
 
 public abstract class MultiSaxCheckXmlTestCase extends
