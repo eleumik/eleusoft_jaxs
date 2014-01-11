@@ -22,7 +22,12 @@ public class XalanSerializerFactory
     // Just to trigger load of lib and fail,
     // otherwise thinks there is Xalan but then
     // does not work
-    static final OutputPropertiesFactory factory = new OutputPropertiesFactory();
+    static
+    {
+        // just to trigger load..
+        OutputPropertiesFactory factory = new OutputPropertiesFactory();
+        factory = null;
+    }
 	
     public 	DOMSerializer createDOMSerializer() 
     {
