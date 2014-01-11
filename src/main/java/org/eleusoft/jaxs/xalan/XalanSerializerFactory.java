@@ -1,6 +1,7 @@
 package org.eleusoft.jaxs.xalan;
 
 
+import org.apache.xml.serializer.OutputPropertiesFactory;
 import org.eleusoft.jaxs.DOMSerializer;
 import org.eleusoft.jaxs.DOMSerializerFactory;
 import org.eleusoft.jaxs.SAXSerializer;
@@ -18,6 +19,10 @@ import org.eleusoft.jaxs.SAXSerializerFactory;
 public class XalanSerializerFactory
    implements  DOMSerializerFactory, SAXSerializerFactory
 {
+    // Just to trigger load of lib and fail,
+    // otherwise thinks there is Xalan but then
+    // does not work
+    static final OutputPropertiesFactory factory = new OutputPropertiesFactory();
 	
     public 	DOMSerializer createDOMSerializer() 
     {
