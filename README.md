@@ -28,6 +28,15 @@ Dependencies
 
 The API package depends only on SAX and DOM packages included in JRE. The full list of dependencies can be found in the [`pom.xml`](https://github.com/eleumik/eleusoft_jaxs/blob/master/pom.xml)
 
+Maven
+-----
+
+    <dependency>
+       <groupId>org.eleusoft</groupId>
+       <artifactId>eleusoft_jaxs</artifactId>
+       <version>1.0.0</version>
+    </dependency>`
+
 
 Author
 ------
