@@ -33,7 +33,7 @@ public class ConfigurableTraXSAXSerializer extends
     public ConfigurableTraXSAXSerializer(final TransformerFactory factory)
     {
         
-        System.err.println(this.getClass()+ "konf:"+factory);
+        //System.err.println(this.getClass()+ "konf:"+factory);
         if (factory == null)
             throw new IllegalArgumentException("null factory passed");
         try

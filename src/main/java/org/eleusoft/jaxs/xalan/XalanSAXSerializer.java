@@ -15,6 +15,16 @@ import org.xml.sax.ContentHandler;
  * Serializer for SAX events streams based on apache
  * <code>org.apache.xml.serializer.Serializer</code> class,
  * the serializer from Xalan.
+ * <p>Note that the <code>org.apache.xml.serializer.Serializer</code>
+ * is included only in JDK4 "endorsed" libs,
+ * more modern JDK need to have Xalan-Serializer in the classpath:
+ * <pre>
+ * &lt;dependency>
+        &lt;groupId>xalan&lt;/groupId>
+        &lt;artifactId>serializer&lt;/artifactId>
+        &lt;version>2.7.1&lt;/version>
+    &lt;/dependency>
+   </pre>
  **/
 class XalanSAXSerializer extends AbstractSAXSerializer
 {

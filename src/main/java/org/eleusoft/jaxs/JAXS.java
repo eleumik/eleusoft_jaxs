@@ -1,5 +1,7 @@
 package org.eleusoft.jaxs;
 
+import org.xml.sax.ContentHandler;
+
 
 /** 
  * Entry point for xml serialization.
@@ -52,6 +54,8 @@ public class JAXS
         saxSerializerFactory = (SAXSerializerFactory) sl.getService(SAXSerializerFactory.class, new String[]{
             DEFAULT_SAXSERIALIZERFACTORY_CLASSNAME
         });
+        
+        if (debug) showInfo();
         
     }
     
@@ -125,6 +129,11 @@ public class JAXS
             System.out.println("Parent Classloader:" + loader.getParent());
         }
         
+        System.out.println("Classloader of SAX Serializer:" + newSAXSerializer().getClass().getClassLoader());
+        System.out.println("Classloader of JAXP ContentHandler:" + ContentHandler.class.getClassLoader());
+        //System.out.println("Classloader of java.lang.String:" + new String().getClass().getClassLoader());
+               
+        line();
         
         
     }
